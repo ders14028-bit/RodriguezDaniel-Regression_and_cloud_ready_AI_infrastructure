@@ -73,8 +73,9 @@ Los notebooks se subieron a el sage maker descargando los archivos guardados en 
 <img width="1785" height="953" alt="image" src="https://github.com/user-attachments/assets/7dc618c1-6c8d-4bc3-8c2f-b9ea85475b3a" />
 
 
+### Comparacion
 
-
+En mi opinion, no hubo diferencia alguna entre la ejecucuin del trabajo localmente y la de SageMaker. La experiencia fue exactamente la misma, lo unico que cambiaba es que una se hacia de manera remota y otra localmente.
 
 ## Creado con
 
