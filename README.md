@@ -26,9 +26,9 @@ Desde la perspectiva de la arquitectura empresarial, no es suficiente conocer el
 
 ### NoteBook1
 
-Se implementa un modelo de regresion lineal con el fin de poder hacer un analisis de la relacion entre la masa y la luminosidad.
+Primero se visualizó el conjunto de datos graficando la luminosidad en función de la masa estelar para analizar la forma de la relación. Luego se implementó el modelo de regresión lineal junto con la función de pérdida MSE. A continuación, se derivaron y calcularon los gradientes y se aplicó el algoritmo de gradiente descendente, evaluando su convergencia y estabilidad. Posteriormente, se realizaron experimentos utilizando distintos valores de learning rate y se compararon los parámetros y pérdidas finales. Finalmente, se representó el ajuste del modelo sobre los datos y se analizaron los errores sistemáticos y las limitaciones del modelo lineal.
 
-Se define la funcion de costo MSE para implementar
+### NoteBook2
 
 ## Resultados y Analisis
 
@@ -37,6 +37,8 @@ Se define la funcion de costo MSE para implementar
 El gráfico final muestra que el modelo presenta errores sistemáticos. En particular, tiende a sobreestimar la luminosidad en estrellas de baja masa y a subestimarla en estrellas de mayor masa. Este patrón indica que el error no es aleatorio, sino que sigue una tendencia clara a lo largo del rango de masas.
 
 Este comportamiento sugiere que el modelo lineal tiene una capacidad limitada para describir correctamente la relación entre masa y luminosidad. Al asumir una relación recta entre ambas variables, el modelo no logra capturar el aumento cada vez más rápido de la luminosidad a medida que la masa crece. Por esta razón, el modelo lineal resulta insuficiente y se hace necesario considerar modelos más flexibles que puedan representar mejor esta relación.
+
+### NoteBook2
 
 ## Evidencia de Ejecucion en AWS SageMaker
 
