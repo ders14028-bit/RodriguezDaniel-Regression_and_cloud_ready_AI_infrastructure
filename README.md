@@ -48,6 +48,12 @@ Los notebooks se subieron a el sage maker descargando los archivos guardados en 
 
 #### Capturas
 
+<img width="1743" height="965" alt="Captura de pantalla 2026-01-27 201700" src="https://github.com/user-attachments/assets/1b4f8d9a-c19c-447b-a103-99607dc446cd" />
+
+<img width="1751" height="938" alt="image" src="https://github.com/user-attachments/assets/81016ddb-faf8-42ef-ba97-6ccb538247f3" />
+
+<img width="1712" height="961" alt="image" src="https://github.com/user-attachments/assets/217e450a-2c7e-4f5e-919b-c758290a925f" />
+
 
 
 ### NoteBook2
