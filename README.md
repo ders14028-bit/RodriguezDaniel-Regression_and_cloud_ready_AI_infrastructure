@@ -30,6 +30,8 @@ Primero se visualizó el conjunto de datos graficando la luminosidad en función
 
 ### NoteBook2
 
+Primero se visualizó el conjunto de datos mostrando la relación entre masa, luminosidad y temperatura. Luego se construyó la matriz de características usando NumPy y se implementaron la función de pérdida MSE y sus gradientes de forma vectorizada. Después, se entrenaron los modelos mediante gradiente descendente y se analizó la convergencia. A continuación, se compararon los modelos M1, M2 y M3 evaluando su pérdida y predicciones. Finalmente, se analizó el efecto del término de interacción y se realizó una predicción para una nueva estrella, verificando que el resultado fuera razonable.
+
 ## Resultados y Analisis
 
 ### NoteBook1
@@ -40,13 +42,15 @@ Este comportamiento sugiere que el modelo lineal tiene una capacidad limitada pa
 
 ### NoteBook2
 
-## Evidencia de Ejecucion en AWS SageMaker
+En este notebook, la incorporación de términos polinomiales y de interacción permitió mejorar el ajuste del modelo respecto a versiones más simples. Al comparar M1, M2 y M3, se observó una reducción de la pérdida y una mejor coincidencia entre valores reales y predichos. El análisis del término de interacción confirmó su relevancia, y la predicción para una nueva estrella resultó coherente con la tendencia de los datos.
 
-### NoteBook1
+## Evidencia de Ejecucion en AWS SageMaker
 
 #### Descripcion
 
 Los notebooks se subieron a el sage maker descargando los archivos guardados en el repositorio de github o desde el editor de codigo que se este usando, en este caso VSC. Una vez descargado los notebooks se abre el sageMaker y tendra la interfaz de VSC, se abren los archivos descargados desde el sageMaker y se inicia la ejecucion.
+
+### NoteBook1
 
 #### Capturas
 
