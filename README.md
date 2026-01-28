@@ -64,6 +64,18 @@ Los notebooks se subieron a el sage maker descargando los archivos guardados en 
 
 ### NoteBook2
 
+<img width="1796" height="932" alt="image" src="https://github.com/user-attachments/assets/0e42b0a9-81c8-439d-846a-e822ee3d2d94" />
+
+<img width="1755" height="953" alt="image" src="https://github.com/user-attachments/assets/612b2de6-775e-41f1-99ac-75ec3e0febae" />
+
+<img width="1709" height="968" alt="image" src="https://github.com/user-attachments/assets/8d20cedc-fa8b-4797-bb7f-128df334b6b8" />
+
+<img width="1785" height="953" alt="image" src="https://github.com/user-attachments/assets/7dc618c1-6c8d-4bc3-8c2f-b9ea85475b3a" />
+
+
+
+
+
 ## Creado con
 
 Python
