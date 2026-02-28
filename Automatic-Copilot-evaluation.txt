@@ -1,0 +1,221 @@
+====================================================================
+  AUTOMATIC COPILOT EVALUATION — TA Grading Report
+  Course: Digital Transformation and Enterprise Architecture
+  Topic:  Stellar Luminosity — Linear and Polynomial Regression
+====================================================================
+
+--------------------------------------------------------------------
+SUMMARY
+--------------------------------------------------------------------
+The student delivered a complete and technically sound submission
+covering both linear and polynomial regression from first principles
+using only Python, NumPy, and Matplotlib as required. Notebook 1
+walks through the full linear-regression pipeline — dataset
+visualization, MSE cost, cost-surface visualization, analytic
+gradient derivation, non-vectorized and vectorized gradient descent,
+convergence analysis, multi-rate experiments, and a conceptual
+discussion. Notebook 2 extends this to polynomial regression with
+two features, implementing vectorized loss/gradients, model
+comparison (M1/M2/M3), interaction-term sweep, and an inference
+demo. The README provides a clear description of the work, results,
+and cloud execution evidence with screenshots. Two execution bugs in
+Notebook 1 (undefined variable `history` before it is assigned, and
+undefined `w_learned`/`b_learned` in the final plot cell) would
+prevent a clean sequential run of the notebook. Notebook 2 has a
+minor issue with the w_MT sweep range being extremely narrow, leading
+to an inconclusive interaction analysis. Overall, the submission
+demonstrates solid understanding of the core concepts.
+
+--------------------------------------------------------------------
+GRADING BREAKDOWN (0.0 – 5.0 scale)
+--------------------------------------------------------------------
+
+1. Repository structure & compliance .................. 0.5 / 0.5
+   - README.md present                                        ✓
+   - Two notebooks (Part I and Part II)                       ✓
+   - Datasets defined inline inside notebooks                 ✓
+   - Only allowed libraries (numpy, matplotlib) used          ✓
+   - No deductions.
+
+2. Notebook 1 — Linear Regression ..................... 1.6 / 2.0
+   Items evaluated:
+   + Dataset visualization and interpretation                 ✓
+   + Hypothesis (predict) and MSE (compute_cost) impl.       ✓
+   + Cost surface (3D grid, surface plot, explanation)        ✓  [MANDATORY]
+   + Gradient derivation shown (LaTeX formulas)               ✓
+   + Non-vectorized gradient descent (explicit loop)          ✓
+   + Vectorized gradient descent (NumPy operations)           ✓
+   + Convergence plot and discussion                          ✓  [MANDATORY]
+   + Three learning-rate experiments (0.001, 0.01, 0.1)       ✓  [MANDATORY]
+   + Final fit plot                                           ✓ (partial — see below)
+   + Conceptual discussion (meaning of w, limits)             ✓
+
+   Deductions (-0.4):
+   - Cell 23 (convergence plot) references `history` before
+     gradient_descent is ever called; would raise NameError
+     if notebook is executed top-to-bottom.                  -0.2
+   - Cell 30 (final fit plot) uses `w_learned` and
+     `b_learned`, which are never assigned anywhere in the
+     notebook; `L_hat` is from the initial test parameters,
+     not the trained model. Plot would fail or show wrong
+     results.                                                -0.2
+
+3. Notebook 2 — Polynomial Regression ................. 1.75 / 2.0
+   Items evaluated:
+   + Scatter plot colored by temperature                      ✓
+   + Feature matrix X = [M, T, M², M·T]                      ✓
+   + Vectorized MSE and gradient functions                    ✓
+   + Gradient-descent training and convergence plot           ✓
+   + M1 / M2 / M3 model comparison with loss and plots       ✓  [MANDATORY]
+   + w_MT sweep and cost-vs-interaction plot                  ✓  [MANDATORY]
+   + Inference demo with interpretation                       ✓  [MANDATORY]
+
+   Deductions (-0.25):
+   - The w_MT sweep range is only ±1e-6 around the learned
+     value, making the resulting curve essentially flat and
+     the analysis inconclusive. A broader range (e.g., ±1 or
+     exploring multiple orders of magnitude) would reveal the
+     parabolic shape of the cost and a clear minimum.        -0.25
+
+4. Cloud execution evidence (SageMaker) ............... 0.40 / 0.5
+   - Description of SageMaker execution workflow              ✓
+   - Screenshots: notebooks open in SageMaker (Notebook 1)    ✓
+   - Screenshots: successful execution                        ✓
+   - Screenshots: plots visible in SageMaker                  ✓
+   - Screenshots: Notebook 2 execution and plots              ✓
+   - Brief local vs cloud comparison                          ✓ (partial)
+
+   Deductions (-0.1):
+   - The local-vs-cloud comparison is superficial ("no
+     difference at all"). A more insightful comparison noting
+     environment setup, dependency management, reproducibility,
+     or scalability benefits would be expected.              -0.1
+
+--------------------------------------------------------------------
+FINAL GRADE
+--------------------------------------------------------------------
+Repository structure & compliance:  0.50 / 0.50
+Notebook 1 – Linear regression:     1.60 / 2.00
+Notebook 2 – Polynomial regression: 1.75 / 2.00
+Cloud execution evidence:           0.40 / 0.50
+                                   ----------------
+Final grade: 4.3 / 5.0
+
+Status: PASS  (minimum passing grade is 3.0 / 5.0)
+
+--------------------------------------------------------------------
+STRENGTHS
+--------------------------------------------------------------------
+- Complete coverage of all mandatory items across both notebooks.
+- Clean and readable code that adheres strictly to the allowed
+  library constraint (NumPy + Matplotlib only).
+- Both non-vectorized and vectorized implementations of gradient
+  descent are present and clearly separated.
+- The 3D cost-surface visualization in Notebook 1 is well
+  constructed and correctly interpreted.
+- Notebook 2 properly engineers all four features [M, T, M², M·T]
+  and provides a sensible three-model comparison with visual output.
+- Multiple SageMaker screenshots covering both notebooks provide
+  convincing cloud-execution evidence.
+- Conceptual questions in Notebook 1 are answered correctly and
+  concisely.
+- The README is well-structured, bilingual-friendly, and provides
+  meaningful results/analysis sections for both notebooks.
+
+--------------------------------------------------------------------
+ISSUES & MISSING ELEMENTS
+--------------------------------------------------------------------
+- Notebook 1, Cell 23: `history` is referenced before
+  `gradient_descent` is ever called. The function is defined in
+  cells 20 and 22 (twice, identically) but never invoked between
+  its definition and cell 23. This causes a NameError on sequential
+  execution.
+- Notebook 1, Cell 30: `w_learned` and `b_learned` are undefined.
+  The trained parameters from the experiments loop (cell 27) are
+  stored in `w` and `b` but not assigned to `w_learned`/`b_learned`.
+  The final fit plot therefore cannot run or shows incorrect results.
+- Notebook 2: The w_MT interaction sweep covers only a range of
+  ±1e-6, which is far too narrow to produce a meaningful cost curve.
+  The student acknowledges "no clear minimum visible" but does not
+  correct the range, missing the instructional objective of the
+  exercise.
+- README local-vs-cloud comparison is minimal and does not address
+  cloud-specific benefits (scalability, reproducibility, managed
+  environments, etc.).
+
+--------------------------------------------------------------------
+TA FEEDBACK TO STUDENT
+--------------------------------------------------------------------
+Your submission covers the required concepts thoroughly and your
+implementations are mathematically correct. The main areas to
+address are:
+
+1. Execution flow in Notebook 1: Before plotting the convergence
+   curve (cell 23) make sure gradient_descent is actually called and
+   its return value assigned to `history`. Similarly, before the
+   final fit plot (cell 30) assign the trained parameters:
+     w_learned, b_learned, history = gradient_descent(...)
+   and use them to compute predictions.
+
+2. Interaction sweep range in Notebook 2: Broaden the w_MT sweep to
+   a range of several units (e.g., np.linspace(-1, 1, 200)) so that
+   the parabolic shape of the cost curve is visible and the minimum
+   can be identified and discussed.
+
+3. Cloud comparison: Expand the README section with a few sentences
+   on practical differences: how libraries are pre-installed on
+   SageMaker, how compute can be scaled, and how managed notebooks
+   improve reproducibility compared to a local environment.
+
+Fixing the variable-name bugs would make the notebook fully
+executable and would significantly improve the quality of the
+submission.
+
+--------------------------------------------------------------------
+AI-GENERATION ASSESSMENT  (NON-GRADING — informational only)
+--------------------------------------------------------------------
+
+A. Qualitative Assessment
+   Indicators suggesting AI assistance:
+   - Code structure is clean, consistent, and follows textbook
+     conventions with very little deviation across both notebooks.
+   - Function signatures and variable names are highly regular
+     (predict, compute_cost, compute_gradients, gradient_descent).
+   - Markdown explanations are concise and uniformly structured,
+     with no visible trial-and-error or reflection on failed
+     attempts.
+   - The LaTeX gradient derivation (cell 15) is presented without
+     intermediate steps or personal annotation.
+
+   Indicators suggesting human authorship:
+   - Explanations are written in Spanish and contain idiomatic
+     phrasing (e.g., "tazas de fusion", "desenso por gradiante")
+     including minor spelling errors that are characteristic of
+     human typing.
+   - The execution bugs (undefined `history`, `w_learned`,
+     `b_learned`) are typical of a student reorganizing cells
+     without re-running, rather than a fully generated notebook.
+   - The narrow w_MT sweep range suggests a human oversight rather
+     than an AI-generated complete solution.
+   - The README includes personal remarks and a thank-you note to
+     the professor.
+
+B. Quantitative Estimate
+   Code:                 ~55%  AI-assisted
+   Explanations/markdown: ~35%  AI-assisted
+   README:               ~25%  AI-assisted
+
+C. Commentary
+   The code in both notebooks is structurally clean and follows
+   standard implementations that are widely available in tutorials
+   and could have been scaffolded with AI assistance, though the
+   execution bugs and the suboptimal sweep range suggest the student
+   made their own editing decisions. The Spanish-language
+   explanations show personal voice and contain natural imperfections
+   that point to genuine authorship, with possible AI support for
+   phrasing or translation. The README reads largely as original
+   student writing.
+
+   This assessment is observational and does not imply misconduct.
+
+====================================================================
